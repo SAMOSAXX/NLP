@@ -1,3 +1,29 @@
+#COMMON IMPORTS
+import numpy as np
+import pandas as pd
+import os
+import re
+# Disable WandB logging
+os.environ["WANDB_DISABLED"] = "true"
+
+#TEXT SUMMARIZATION
+from datasets import Dataset
+from transformers import T5Tokenizer
+from transformers import T5ForConditionalGeneration, Seq2SeqTrainer, Seq2SeqTrainingArguments
+
+
+#SENTIMENT ANALYSIS
+from transformers import pipeline
+from datasets import load_dataset
+from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
+from transformers import Trainer, TrainingArguments
+import torch
+
+#MACHINE TRANSLATION
+from transformers import MarianMTModel, MarianTokenizer
+from datasets import load_dataset
+from transformers import Seq2SeqTrainer, Seq2SeqTrainingArguments
+
 #API
 from openai import OpenAI
 api_key = "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"
